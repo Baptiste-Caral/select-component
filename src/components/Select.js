@@ -26,28 +26,24 @@ function Select() {
   const list = listValues.map((option, i) => <label className='label' htmlFor={option}> {option}<input id={option} key={i} type="checkbox" value={option} name={option} /></label> )
 
   return (
-    <div className="select-container">
-      <div>
-      <div className="bigdiv">
-        <div className={`select ${openList ? "select-open" : "select"}`} onClick={handleOpenList}>
-          <div>
-            {selectedValue}
-          </div>
-          <div className="arrowbutton">
-            <FaArrowAltCircleDown />
-          </div> 
+    <div>
+      <div className="select-container">
+        <div className={`select ${openList ? "select-open" : "select"}`} onClick= {handleOpenList}>
+        <div>
+          {selectedValue}
         </div>
-        <div className="select-form-container">
-          <form 
-            className={`select-form ${openList ? "select-form" : "select-form-open"}`}
-            onChange={handleChange}>
-            {list}
-          </form>
-        </div>
+        <div className="arrowbutton">
+          <FaArrowAltCircleDown />
+        </div> 
       </div>
-        
-        
+      <div className="select-form-container">
+        <form 
+          className={`select-form ${openList ? "select-form" : "select-form-open"}`}
+          onChange={handleChange}>
+          {list}
+        </form>
       </div>
+      </div>  
     </div>
   );
 }
