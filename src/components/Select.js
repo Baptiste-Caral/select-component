@@ -6,7 +6,7 @@ function Select() {
   // Put your values in this array
   const listValues = ['item1', 'item2', 'item3', 'item4']
 
-  const [selectedValue, setSelectedValue] = useState('Sélectioner une valeur');
+  const [selectedValue, setSelectedValue] = useState('Sélectionner une valeur');
   const [openList, setOpenList] = useState(false)
 
   const handleChange = (event) => {
@@ -29,7 +29,7 @@ function Select() {
     <div className="select-container">
       <div>
       <div className="bigdiv">
-        <div className="select" onClick={handleOpenList}>
+        <div className={`select ${openList ? "select-open" : "select"}`} onClick={handleOpenList}>
           <div>
             {selectedValue}
           </div>
@@ -39,7 +39,7 @@ function Select() {
         </div>
         <div className="select-form-container">
           <form 
-            className={`select-form ${openList ? "select-form" : "select-form-active"}`}
+            className={`select-form ${openList ? "select-form" : "select-form-open"}`}
             onChange={handleChange}>
             {list}
           </form>

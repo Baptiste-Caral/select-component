@@ -3,7 +3,6 @@
 .App {
   text-align: center;
   font-family: 'Poppins';
-
 }
 .bigdiv {
   border: 1px solid black;
@@ -13,10 +12,15 @@
   padding: .5em;
 }
 .select {
+  padding: .5em;
+  border-radius: 10px;
   font-size: 1.2em;
   display: flex;
   justify-content: space-between;
-  background-color: #fefefe;
+  
+}
+.select-open {
+  background-color: #e7e7e7;
 }
 .select-form {
   display: flex;
@@ -25,12 +29,13 @@
 }
 .label {
   background: #fefefe;
+  border-radius: 5px;
 }
 .label:hover{
-  background: rgb(216, 210, 210);
+  background: #e7e7e7;
 
 }
-.select-form-active{
+.select-form-open{
   display: none;
 }
 input {
