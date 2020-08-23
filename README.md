@@ -1,7 +1,11 @@
 ## How it Works:
+
 To use this Select Component, use the 'options' props.
 Add options you want to show in the Select component in an array and pass it into the 'options' props.
 
+You can also change the size of the component by the size prop.
+'small' 'medium' & 'large' are available.
+The default size is large
 
 ```
 const options = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']
@@ -10,7 +14,7 @@ function App() {
   
   return (
     <div className="App"> 
-      <Select options={options} />
+      <Select options={options} size={'medium'} />
     </div>
   )
 ```
