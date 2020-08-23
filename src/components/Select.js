@@ -1,51 +1,53 @@
 import React, { useState } from 'react';
 import { FaArrowAltCircleDown } from 'react-icons/fa';
+import './select.css';
 
 function Select() {
 
   // Put your values in this array
   const listValues = ['item1', 'item2', 'item3', 'item4']
 
-  const [selectedValue, setSelectedValue] = useState('Sélectionner une valeur');
+  // State 
+  const [selectedValue, setSelectedValue] = useState('Sélectionner une valeur')
   const [openList, setOpenList] = useState(false)
-
+ 
+  // Handle form value
   const handleChange = (event) => {
+    // Put Selected Value in state (Reacthook)
     setSelectedValue(event.target.value)
+    // close select div
     setOpenList(false)
   }
+  // Open and close Select div
   const handleOpenList = () => {
     if (openList === false) {
       setOpenList(true)
     } else if (openList === true)
     setOpenList(false)
   }
-  console.log(openList);
-
-
-
-  const list = listValues.map((option, i) => <label className='label' htmlFor={option}> {option}<input id={option} key={i} type="checkbox" value={option} name={option} /></label> )
+  // create an input for each item in listValues array
+  const list = listValues.map((option, i) => <label key={i} className='label' htmlFor={option}> {option}<input id={option} key={i} type="checkbox" value={option} name={option} /></label> )
 
   return (
     <div>
       <div className="select-container">
-        <div className={`select ${openList ? "select-open" : "select"}`} onClick= {handleOpenList}>
-        <div>
-          {selectedValue}
+        <div className={`select ${openList ? "select-open" : "select"}`} onClick={handleOpenList}>
+          <div>
+            {selectedValue}
+          </div>
+          <div className="arrowbutton">
+            <FaArrowAltCircleDown />
+          </div> 
         </div>
-        <div className="arrowbutton">
-          <FaArrowAltCircleDown />
-        </div> 
-      </div>
-      <div className="select-form-container">
-        <form 
-          className={`select-form ${openList ? "select-form" : "select-form-open"}`}
-          onChange={handleChange}>
-          {list}
-        </form>
-      </div>
+        <div className="select-form-container">
+          <form 
+            className={`select-form ${openList ? "select-form" : "select-form-open"}`}
+            onChange={handleChange}>
+            {list}
+          </form>
+        </div>
       </div>  
     </div>
   );
 }
-
 export default Select;
