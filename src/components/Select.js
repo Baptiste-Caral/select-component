@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { FaArrowAltCircleDown } from 'react-icons/fa';
 import './select.css';
 
-function Select() {
-
-  // Put your values in this array
-  const listValues = ['item1', 'item2', 'item3', 'item4']
+function Select({values}) {
 
   // State 
   const [selectedValue, setSelectedValue] = useState('Sélectionner une valeur')
@@ -13,6 +10,7 @@ function Select() {
  
   // Handle form value
   const handleChange = (event) => {
+
     // Put Selected Value in state (Reacthook)
     setSelectedValue(event.target.value)
     // close select div
@@ -26,7 +24,7 @@ function Select() {
     setOpenList(false)
   }
   // create an input for each item in listValues array
-  const list = listValues.map((option, i) => <label key={i} className='label' htmlFor={option}> {option}<input id={option} key={i} type="checkbox" value={option} name={option} /></label> )
+  const list = values.map((option, i) => <label key={i} className='label' htmlFor={option}> {option}<input id={option} key={i} type="checkbox" value={option} name={option} /></label> )
 
   return (
     <div>
