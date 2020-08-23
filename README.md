@@ -1,3 +1,19 @@
+## How it Works:
+To use this Select Component, use the 'values' props.
+Add your values you want to show in the Select component in an array and pass it into the 'values' props.
+
+
+```
+const val = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']
+
+function App() {
+  
+  return (
+    <div className="App"> 
+      <Select values={val} />
+    </div>
+  )
+```
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
